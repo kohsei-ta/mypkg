@@ -76,10 +76,38 @@ $ ros2 run mypkg talker
 ・・・
 ```
 
-## launchのやり方
+## ローンチファイルの実行
 
 ```
-$
+$ ros2 launch mypkg talk_listen.launch.py
+```
+```
+[INFO] [launch]: All log files can be found below /home/...
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [talker-1]: process started with pid [974]
+[INFO] [listener-2]: process started with pid [976]
+[listener-2] [INFO] [1703574542.456174715] [listener]: Listen: 0
+[listener-2] [INFO] [1703574542.943050229] [listener]: Listen: 1
+[listener-2] [INFO] [1703574543.442637826] [listener]: Listen: 2
+・・・
+```
+
+## testコマンド
+
+以下のコマンドで'test'というディレクトリに移動する.
+```
+$ cd test
+```
+
+10秒間ノードを実行し、listenerが出力するべき行を探すというもの.
+```
+$ ./test.bash
+```
+```
+(略)
+Summary: 2 packages finished [1.63s]
+  1 package had stderr output: mypkg
+[listener-2] [INFO] [1703575077.713144188] [listener]: Listen: 10
 ```
 
 # 必要なソフトウェア
