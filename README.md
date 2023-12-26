@@ -27,6 +27,61 @@ mypkg  package.xml  resource  setup.cfg  setup.py  test
 ```
 上記のようになっていればOK.
 
+## 実行とメッセージの確認
+
+* ros2 runで実行
+
+```
+$ ros2 run mypkg talker 
+```
+下には何も表示されない.
+
+* 別端末でros2のサブスクライブ
+
+別の端末を開き以下を実行する.
+```
+$ ros2 topic echo /countup
+```
+
+* 結果
+
+```
+data: 50
+---
+data: 51
+---
+・・・
+```
+
+## talkerとlistenerの動作確認
+
+* talkerの実行
+
+一つ目の端末で以下を実行する.
+```
+$ ros2 run mypkg talker
+```
+
+別の端末を開き以下を実行する.
+```
+$ ros2 run mypkg talker
+```
+
+* 結果
+
+```
+[INFO] [1703485802.104979021] [listener]: Listen: 20
+[INFO] [1703485802.592628904] [listener]: Listen: 21
+[INFO] [1703485803.094116753] [listener]: Listen: 22
+・・・
+```
+
+## launchのやり方
+
+```
+$
+```
+
 # 必要なソフトウェア
 * Python
 
