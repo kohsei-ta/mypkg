@@ -1,11 +1,13 @@
 # mypkg
-千葉工業大学未来ロボティクス学科の2023年度ロボットシステム学の練習用リポジトリです.
+千葉工業大学未来ロボティクス学科の2023年度ロボットシステム学の練習用リポジトリである.
+
+![test](https://github.com/kohsei-ta/mypkg/actions/workflows/test.yml/badge.svg)
 
 ## インストール法
 
 * クローン
 
-当リポジトリをインストールしたい任意のディレクトリで操作していく.
+当リポジトリをインストールしたい任意のディレクトリで操作する.
 ```
 $ git clone https://github.com/kohsei-ta/mypkg.git
 ```
@@ -27,9 +29,14 @@ mypkg  package.xml  resource  setup.cfg  setup.py  test
 ```
 上記のようになっていればOK.
 
-## 実行とメッセージの確認
+# 機能説明と実行
 
-* ros2 runで実行
+## talker
+* 機能
+
+0.5秒おきに数字をカウントし、トピック/countupを通じて送信する.
+
+* 実行
 
 ```
 $ ros2 run mypkg talker 
@@ -53,6 +60,16 @@ data: 51
 ・・・
 ```
 
+## listener
+
+* 機能
+
+/countupからメッセージを受け取り表示する.
+
+* 実行
+
+実行は次の「talkerとlistenerの動作確認」にある.
+
 ## talkerとlistenerの動作確認
 
 * talkerの実行
@@ -62,9 +79,11 @@ data: 51
 $ ros2 run mypkg talker
 ```
 
+* listenerの実行
+
 別の端末を開き以下を実行する.
 ```
-$ ros2 run mypkg talker
+$ ros2 run mypkg listener
 ```
 
 * 結果
@@ -78,9 +97,13 @@ $ ros2 run mypkg talker
 
 ## ローンチファイルの実行
 
+launchファイルを使用することで、talkerとlistenerの実行を同時に行うことができる.
+
+* 実行
 ```
 $ ros2 launch mypkg talk_listen.launch.py
 ```
+* 結果
 ```
 [INFO] [launch]: All log files can be found below /home/...
 [INFO] [launch]: Default logging verbosity is set to INFO
@@ -94,15 +117,20 @@ $ ros2 launch mypkg talk_listen.launch.py
 
 ## testコマンド
 
-以下のコマンドで'test'というディレクトリに移動する.
+以下のコマンドで`mypkg`ディレクトリ内にある`test`というディレクトリに移動する.
 ```
 $ cd test
 ```
 
-10秒間ノードを実行し、listenerが出力するべき行を探すというもの.
+* 機能
+
+10秒間ノードを実行し、listenerが出力するべき行を探す.
+
+* 実行
 ```
 $ ./test.bash
 ```
+* 結果
 ```
 (略)
 Summary: 2 packages finished [1.63s]
@@ -112,6 +140,7 @@ Summary: 2 packages finished [1.63s]
 
 # 必要なソフトウェア
 * Python
+* ROS2 Humble
 
 # テスト環境
 * Ubuntu 22.04.2 LST
