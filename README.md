@@ -66,9 +66,9 @@ data: 51
 
 /countupからメッセージを受け取り表示する.
 
-* 実行
+* 実行と結果
 
-実行は次の「talkerとlistenerの動作確認」にある.
+listenerの実行とその結果は次の「talkerとlistenerの動作確認」にある.
 
 ## talkerとlistenerの動作確認
 
