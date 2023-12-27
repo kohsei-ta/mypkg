@@ -95,7 +95,7 @@ $ ros2 run mypkg listener
 ・・・
 ```
 
-## ローンチファイルの実行
+## ローンチファイルの実行と結果
 
 launchファイルを使用することで、talkerとlistenerの実行を同時に行うことができる.
 
@@ -113,29 +113,6 @@ $ ros2 launch mypkg talk_listen.launch.py
 [listener-2] [INFO] [1703574542.943050229] [listener]: Listen: 1
 [listener-2] [INFO] [1703574543.442637826] [listener]: Listen: 2
 ・・・
-```
-
-## testコマンド
-
-以下のコマンドで`mypkg`ディレクトリ内にある`test`というディレクトリに移動する.
-```
-$ cd test
-```
-
-* 機能
-
-10秒間ノードを実行し、listenerが出力するべき行を探す.
-
-* 実行
-```
-$ ./test.bash
-```
-* 結果
-```
-(略)
-Summary: 2 packages finished [1.63s]
-  1 package had stderr output: mypkg
-[listener-2] [INFO] [1703575077.713144188] [listener]: Listen: 10
 ```
 
 # 必要なソフトウェア

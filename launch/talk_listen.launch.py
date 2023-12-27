@@ -1,3 +1,7 @@
+#!/bin/bash -xv
+# SpDX-FileCopyrightText: 2023 Kohsei Takaoka ta.kousei0226@gmail.com
+# SPDX-License-Identifier: BSD-3-Clause
+
 import launch
 import launch.actions
 import launch.substitutions
