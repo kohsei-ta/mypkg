@@ -117,7 +117,7 @@ $ ros2 launch mypkg talk_listen.launch.py
 
 # 必要なソフトウェア
 * Python
- * テスト済み:3.10
+  * テスト済み:3.10
 * ROS2 Humble
 
 # テスト環境
